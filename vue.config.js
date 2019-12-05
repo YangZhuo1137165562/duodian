@@ -1,0 +1,11 @@
+module.exports={
+    devServer:{
+        proxy:{
+            "/api":{//html,style.js不需要代理
+                target:"http://106.13.85.240:7002/",//反向代理地址
+                changeOrigin:true,//允许跨域
+                pathRewrite:{"^/api":""}//重写
+            }
+        }
+    }
+}

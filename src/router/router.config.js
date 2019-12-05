@@ -1,0 +1,44 @@
+const routes = [
+    {
+      path:"/",
+      redirect:"/index"
+    },
+    {
+      path:"/index",
+      component:()=>import("../views/index/index.vue"),
+      redirect:"/index/home",
+      children:[
+        {
+          path:"home",
+          component:()=>import("../views/index/home/home.vue")
+        },
+        {
+          path:"type",
+          component:()=>import("../views/index/type/type.vue")
+        },
+        {
+          path:"cart",
+          component:()=>import("../views/index/cart/cart.vue")
+        },
+        {
+          path:"my",
+          component:()=>import("../views/index/my/my.vue")
+        }
+      ]
+    },
+    {
+      path:"/detail",
+      component:()=>import("../views/detail/detail.vue")
+    },
+    {
+      path:"/login",
+      component:()=>import("../views/login/login.vue")
+    },
+    {
+      path:"/regitry",
+      component:()=>import("../views/regitry/regitry.vue")
+    }
+]
+
+//默认抛出
+export default routes;
