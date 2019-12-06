@@ -18,11 +18,17 @@ const routes = [
         },
         {
           path:"cart",
-          component:()=>import("../views/index/cart/cart.vue")
+          component:()=>import("../views/index/cart/cart.vue"),
+          meta:{
+            requireAuto:true
+          }
         },
         {
           path:"my",
-          component:()=>import("../views/index/my/my.vue")
+          component:()=>import("../views/index/my/my.vue"),
+          meta:{
+            requireAuto:true
+          }
         }
       ]
     },

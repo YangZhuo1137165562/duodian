@@ -24,7 +24,7 @@ export default {
     };
   },
   methods: {
-    registry(){
+    registry(){//去注册
       this.$router.push("/regitry")
     },
     // 1、异步逻辑
@@ -62,7 +62,7 @@ export default {
         if (res.data.code == 1) {
           console.log(res.data,"res.data");
           window.localStorage.token = res.data.data.token; //将用户信息存到本地存储
-          this.$router.push("/index/home");
+          this.$router.push({path:this.$route.query.redirect})
         }
       } catch (e) {
         alert('请注册');
